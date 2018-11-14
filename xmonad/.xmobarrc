@@ -1,0 +1,54 @@
+Config { font 			= "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
+       , bgColor		= "#282c34" --"#444444"
+       , fgColor		= "#00d9c0" --"#31bfbc" --"#dee3e0" --"#cdcdcd"
+       , position		= Top
+       , lowerOnStart		= True
+       , hideOnStart		= False
+       , persistent		= True
+       , overrideRedirect	= True
+       , commands		=
+       		    [ Run MultiCpu	[ "--template"  , "Cpu: <total0>%|<total1>%"
+					, "-L"		, "3"
+		    			, "-H"		, "50"
+					, "--low"	, "#00d9c0"
+					, "--normal"	, "green"
+					, "--high"	, "red"
+					] 10
+		    , Run DynNetwork	[ "--template"  , "<dev>: <tx>kB/s|<rx>kB/s"
+		    			, "--Low"	, "1000"
+					, "--High"	, "100000"
+					, "--low"	, "#00f000"
+					, "--normal"	, "darkorange"
+					, "--high"	, "#ff0000"
+					] 10
+                    , Run Memory	[ "-t"		, "Mem: <usedratio>%"
+		    			, "--Low"	, "20"
+					, "--High"	, "90"
+					, "--low"	, "#00f000"
+					, "--normal"	, "#ffbe0b"
+					, "--high"	, "#ff0000"
+					] 10
+                    , Run Swap [] 10
+                    , Run Date		"%a %b %_d %l:%M" "date" 10
+--		    , Run Battery	[ "--template"	, "Batt: <acstatus>"
+--		    			, "--Low"	, "10"
+--					, "--High"	, "90"
+--					, "--low"	, "#ff0000"
+--					, "--normal"	, "darkorange"
+--					, "--high"	, "#00ff00"
+--					, "--"
+--						, "-o"	, "<left>% (<timeleft>)"
+--						, "-O"	, "<fc=#daa520>Charging</fc>"
+--						, "-i"	, "<fc=#00f000>Charged</fc>"
+--					] 10
+                    , Run StdinReader
+		    , Run Weather "KOAK" [ "--template", "<skyCondition> | <fc=#4682B4><tempF></fc>°F | <fc=#4682B4><rh></fc>% | <fc=#4682B4><pressure></fc>hPa"
+					 ] 36000
+--		    , Run Com "/path/to/Documents/Stories/nano-progress.sh" [] "nano" 50
+		    , Run Com "/path/to/bin/nag.sh" [] "nag" 600
+--		    , Run Com "xdotool getwindowfocus getwindowname" [] "name" 10
+                    ]
+       , sepChar	= "%"
+       , alignSep	= "}{"
+       , template	= " %StdinReader% +++ }{ +++ %multicpu% | %memory% * %swap% | %nag% "
+       }
