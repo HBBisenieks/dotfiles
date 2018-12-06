@@ -4,19 +4,24 @@
 # PROMPT='$BG[008] %B%n %{$bg[blue]%} %c %(?.$BG[002].$BG[001])  %{$reset_color%} $FG[003]%#%b '
 
 where=""
+SESSION_TYPE='local'
 
 prompt_context() {
 	if [[ -n "$SSH_CONNECTION" ]] ; then
 		where="%m"
+		SESSION_TYPE='ssh'
 	fi
 }
 
 prompt_context
 
-# Color-based exit status prompt
-#PROMPT='$FG[007]$BG[199] %B%n $BG[128] $where $BG[021] %c %(?.$BG[002].$BG[001])  %{$reset_color%} $FG[003]%#%b '
-# Emoji-based exit status prompt
-PROMPT='$FG[007]$BG[199] %B%n $BG[128] $where $BG[021] %c %{$reset_color%} %(?.✨ .💀 ) $FG[003]%#%b '
+if [[ `uname` == 'Linux' || "$SESSION_TYPE" == 'ssh' ]] ; then
+	# Color-based exit status prompt for Linux and remote connections
+	PROMPT='$FG[007]$BG[199] %B%n $BG[128] $where $BG[021] %c %(?.$BG[002].$BG[001])  %{$reset_color%} $FG[003]%#%b '
+elif [[ `uname` == 'Darwin' ]] ; then
+		# Emoji-based exit status prompt for Mac
+		PROMPT='$FG[007]$BG[199] %B%n $BG[128] $where $BG[021] %c %{$reset_color%} %(?.✨ .💀 ) $FG[003]%#%b '
+fi
 
 RPROMPT='%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%} $(git_prompt_status)%{$reset_color%}'
 
