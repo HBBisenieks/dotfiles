@@ -49,7 +49,7 @@ myManageHook = composeAll
 	, title =? "jekyll-server"		--> doShift "9"
 	, title =? "minicom"			--> doShift "6:serial"
 	, isDialog				--> doCenterFloat
-	] 
+	]
 
 myWorkspaces = ["1:term","2:web","3:writing","4:music","5:code","6:serial"] ++ map show [7..9]
 
@@ -78,6 +78,8 @@ xmonad $ defaultConfig
 	} `additionalKeys`
 	[ ((mod4Mask .|. shiftMask	, xK_z		), spawn "slock")
 	, ((controlMask			, xK_Print	), spawn "sleep 0.2; scrot -s")
+	, ((mod4Mask .|. shiftMask , xK_3	), spawn "scrot")
+	, ((mod4Mask .|. shiftMask , xK_4 ), spawn "scrot -s")
 	, ((controlMask .|. shiftMask	, xK_m		), spawn "urxvt -name pianobar -e pianobar -c '/usr/bin/pianobar'")
 	, ((controlMask .|. shiftMask	, xK_e		), spawn "urxvt -name minicom -e minicom -c '/usr/bin/minicom'")
 	, ((mod4Mask .|. shiftMask	, xK_f		), spawn "urxvt -name vifm -e vifm -c '/usr/bin/vifm'")
