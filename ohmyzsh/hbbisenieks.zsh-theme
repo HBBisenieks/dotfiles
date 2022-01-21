@@ -17,7 +17,7 @@ prompt_context
 
 if [[ `uname` == 'Linux' || "$SESSION_TYPE" == 'ssh' ]] ; then
 	# Color-based exit status prompt for Linux and remote connections
-	PROMPT='$FG[007]$BG[199] %B%n $BG[128] $where $BG[021] %c %(?.$BG[002].$BG[001])  %{$reset_color%} $FG[003]%#%b '
+	PROMPT='$FG[007]$BG[199] %B%n $BG[128] $where $BG[021] %c %{$reset_color%} %(?.$BG[002].$BG[001])  %{$reset_color%} $FG[003]%#%b '
 elif [[ `uname` == 'Darwin' ]] ; then
 		# Emoji-based exit status prompt for Mac
 		PROMPT='$FG[007]$BG[199] %B%n $BG[128] $where $BG[021] %c %{$reset_color%} %(?.✨ .💀 ) $FG[003]%#%b '
@@ -34,4 +34,4 @@ ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ✭"
 ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✗"
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%} ➦"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[magenta]%} ✂"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[white]%} ✱"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[grey]%} ✱"
