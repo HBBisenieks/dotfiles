@@ -23,7 +23,7 @@ elif [[ `uname` == 'Darwin' ]] ; then
 		PROMPT='$FG[007]$BG[199] %B%n $BG[128] $where $BG[021] %c %{$reset_color%} %(?.✨ .💀 ) $FG[003]%#%b '
 fi
 
-RPROMPT='%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%} $(git_prompt_status)%{$reset_color%}'
+RPROMPT='%{$fg[magenta]%}$(git_prompt_info)%{$reset_color%} $(git_prompt_status)%{$reset_color%} $BG[141]  $BG[255]  $BG[070]  %{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
@@ -34,4 +34,4 @@ ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%} ✭"
 ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✗"
 ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%} ➦"
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[magenta]%} ✂"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[grey]%} ✱"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[white]%} ✱"
