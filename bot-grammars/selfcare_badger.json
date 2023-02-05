@@ -1,0 +1,11 @@
+{
+	"origin": ["Have you had enough to drink today? Maybe have #drink#.","#food-reminder#","#rest#","#feels#"],
+        "drink": ["some water","a nice cup of #tea#"],
+        "tea": ["tea","earl grey","black tea with lemon","oolong","milky chai","soothing mint tea","delicate white tea","dark, malty tea","darjeeling","rose tea","breakfast tea with milk","sencha","lemon tea with honey","assam","bubble tea","barley tea","corn tea","pu-erh","herbal tea","warm spiced apple cider","coffee"],
+	"food-reminder": ["Is your tummy rumbling? You should eat #food#.","When was the last time you ate? Maybe go get #food#.","Are you feeling really cranky? How about eating #food# or drinking #drink#?"],
+	"food": ["a food","an food","#fruit#","some toast with butter","a nut-butter and jelly sandwich","a nut-butter and honey sandwich","a snack","a granola bar","lunch","popcorn","pizza","yogurt with some nuts or fruit or honey","cheese and crackers","edamame","rice cakes with nut butter","some cake","a hoagie","a soft pretzel","some water-ice","a sandwich","a cookie"],
+	"fruit":["some fruit","an apple","a banana","a pear (or two)","dried fruit","dried apples","dried pineapple","dried pears","dried cranberries","raisins","grapes"],
+	"rest":["Are you tired? Can you take a nap?","Are your eyes getting sore? How about taking a five minute screen break?","Are you feeling stir-crazy? How about taking a short walk outside?","Are you stiff and achy? Have a little stretch!"],
+	"feels":["Are you feeling overwhelmed? It's ok to talk to people about your feelings.","Have you taken your meds today? If you haven't, go do that now.","Have you had a hug lately? Consensual hugs are awesome!","Why not go find a furry friend to pet?","Do things feel terrible? Why not google #cute-search#?","You're important, and I'm glad that you're you!"],
+	"cute-search":["baby badgers","sand cats","kittens","puppies","baby lions","bunnies","turtles eating flowers","ocelot kittens","birbs","wolf pups","cute animals","penguins","kitten gifs","fox kits","corgis","corgi sploot","pitbull puppies","husky puppies","corgi puppies"]
+}
